@@ -99,7 +99,8 @@ public class GUI_test {
 				double amount = Double.valueOf(textField.getText());	// 数量蘭の数値を読み込む
 				double rate = Double.valueOf(textField_1.getText());	// 金額蘭の数値を読み込む
 				try {
-					giveAnOrder(rate, amount, "buy", "btc_jpy");	// 金額、数量を指定して「買い」注文を入れる
+					JSONObject respons = giveAnOrder(rate, amount, "buy", "btc_jpy");	// 金額、数量を指定して「買い」注文を入れる
+					textField_2.setText(respons.toString());	// サーバ応答を表示する
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
@@ -115,7 +116,8 @@ public class GUI_test {
 				double amount = Double.valueOf(textField.getText());	// 数量蘭の数値を読み込む
 				double rate = Double.valueOf(textField_1.getText());	// 金額蘭の数値を読み込む
 				try {
-					giveAnOrder(rate, amount, "sell", "btc_jpy");	// 金額、数量を指定して「売り」注文を入れる
+					JSONObject respons = giveAnOrder(rate, amount, "sell", "btc_jpy");	// 金額、数量を指定して「売り」注文を入れる
+					textField_2.setText(respons.toString());	// サーバ応答を表示する
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
@@ -123,6 +125,7 @@ public class GUI_test {
 		});
 		btnNewButton_1.setBounds(293, 79, 117, 29);
 		frame.getContentPane().add(btnNewButton_1);
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
